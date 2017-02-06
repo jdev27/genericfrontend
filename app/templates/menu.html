@@ -1,0 +1,5 @@
+<div class="ui inverted menu">
+    <a routerLink="/{{menu.link}}" *ngFor="let menu of menus" class="{{menu.isActive ? 'active ' : '' }}item">
+        {{menu.label}}
+    </a>
+</div>
