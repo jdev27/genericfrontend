@@ -1,22 +1,21 @@
 #Generic Angular 2.0 Project
 ## Used for testing only
+Sample transactions using Angular 2 only.
 
 ## Install Dependencies
-run:\
-cd ${projectLoc}\
+run:<br/>
+cd ${projectLoc}<br/>
 npm install
 
-##Semantic ui
-run:\
-cd semantic\
-gulp build
-
 ##Start Angular
-run:\
+run:<br/>
 npm start
 
 ##TODO
-* Connect the services to generic backend (spring boot RestControllers)
+- finish form validation
+- configure semantic ui for dropdown,modal form, etc
+- Connect the services to generic backend (spring boot RestControllers)
+- Implement user sign on feature / uas
 
 ##Suggestions:
 * Connect to CMiS

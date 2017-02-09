@@ -2,14 +2,16 @@
 var UserService = (function () {
     function UserService() {
     }
-    UserService.prototype.getUser = function () {
-        return {
-            name: 'userName', email: 'userEmail@test.com', address: {
-                street: 'testStreet',
-                city: 'testCity',
-                country: 'country'
-            }
-        };
+    UserService.prototype.getUsers = function () {
+        return [{
+                name: 'userName', email: 'userEmail@test.com', gender: 'male',
+                dob: new Date('12/24/1993'), address: {
+                    street: 'testStreet',
+                    city: 'testCity',
+                    postalCode: '123',
+                    country: 'country'
+                }
+            }];
     };
     return UserService;
 }());

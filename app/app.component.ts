@@ -13,7 +13,7 @@ export class AppComponent {
 
     title: string;
 
-    constructor(app: AppService) {
+        constructor(app: AppService) {
         this.title = app.getTitle();
     }
 }

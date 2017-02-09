@@ -1,14 +1,14 @@
-import '../models/menu'
+import '../models/menu.model';
 
 export class MenuService {
 
     getMenus(): Menu[] {
         return [
-            {label: 'Home', isActive: true, link: ''},
-            {label: 'User', isActive: false, link: 'user'},
-            {label: 'Product', isActive: false, link: 'product'},
-            {label: 'Transaction', isActive: false, link: '#'},
-            {label: 'About', isActive: false, link: 'about'}];
+            {label: 'Home', link: '/home', class: 'item'},
+            {label: 'User', link: '/user', class: 'item'},
+            {label: 'Product', link: '/product', class: 'item'},
+            {label: 'Transaction', link: 'transaction', class: 'item'},
+            {label: 'About', link: '/about', class: 'item'},
+            {label: 'Sign in', link: '/signin', class: 'right item'}];
     }
-
 }

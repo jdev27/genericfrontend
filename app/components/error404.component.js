@@ -9,22 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var menu_service_1 = require('../services/menu.service');
-require('../models/menu');
-var MenuComponent = (function () {
-    function MenuComponent(menuService) {
-        this.menus = menuService.getMenus();
+var router_1 = require('@angular/router');
+var Error404Component = (function () {
+    function Error404Component(router) {
+        this.page = router.url;
     }
-    MenuComponent = __decorate([
+    Error404Component = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'menu',
-            templateUrl: '../templates/menu.html',
-            providers: [menu_service_1.MenuService]
+            selector: 'error404',
+            templateUrl: '../templates/error404.html'
         }), 
-        __metadata('design:paramtypes', [menu_service_1.MenuService])
-    ], MenuComponent);
-    return MenuComponent;
+        __metadata('design:paramtypes', [router_1.Router])
+    ], Error404Component);
+    return Error404Component;
 }());
-exports.MenuComponent = MenuComponent;
-//# sourceMappingURL=menu.components.js.map
+exports.Error404Component = Error404Component;
+//# sourceMappingURL=error404.component.js.map

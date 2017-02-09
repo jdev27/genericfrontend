@@ -8,22 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var user_service_1 = require('../services/user.service');
-var UserComponent = (function () {
-    function UserComponent(userService) {
-        this.user = userService.getUser();
+var core_1 = require('@angular/core');
+var HomeComponent = (function () {
+    function HomeComponent() {
     }
-    UserComponent = __decorate([
+    HomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'user',
-            templateUrl: '../templates/user.html',
-            providers: [user_service_1.UserService]
+            selector: 'home',
+            templateUrl: '../templates/home.html'
         }), 
-        __metadata('design:paramtypes', [user_service_1.UserService])
-    ], UserComponent);
-    return UserComponent;
+        __metadata('design:paramtypes', [])
+    ], HomeComponent);
+    return HomeComponent;
 }());
-exports.UserComponent = UserComponent;
-//# sourceMappingURL=user.components.js.map
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=home.component.js.map

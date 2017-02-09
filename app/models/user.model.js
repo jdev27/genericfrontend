@@ -1,9 +1,9 @@
 "use strict";
-require('./address');
+require('./address.model');
 var User = (function () {
     function User() {
     }
     return User;
 }());
 exports.User = User;
-//# sourceMappingURL=user.js.map
+//# sourceMappingURL=user.model.js.map

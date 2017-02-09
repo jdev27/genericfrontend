@@ -1,5 +1,5 @@
 interface Menu {
     label: string;
-    isActive: boolean;
     link: string;
+    class: string;
 }

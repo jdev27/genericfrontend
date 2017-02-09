@@ -1,0 +1,26 @@
+/*footer {*/
+/*position: absolute;*/
+/*left: 0;*/
+/*right: 0;*/
+/*bottom: 0;*/
+/*!*height: 100px;*!*/
+/*width: 100%;*/
+/*}*/
+
+li {
+    display: inline;
+}
+
+/*footer {*/
+/*position: absolute;*/
+/*bottom: 0;*/
+/*width: 100%;*/
+/*!* Set the fixed height of the footer here *!*/
+/*height: 30px;*/
+/*}*/
+footer,
+.push {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+}

@@ -1,14 +1,20 @@
-import {ModuleWithProviders} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {ContentComponent} from './components/content.component';
 import {ProductComponent} from './components/product.component';
-import {UserComponent} from './components/user.components';
+import {UserComponent} from './components/user.component';
+import {Error404Component} from './components/error404.component';
+import {HomeComponent} from './components/home.component';
 
-const appRoutes: Routes = [
+const routes: Routes = [
     {
         path: '',
         component: ContentComponent
+    },
+    {
+        path: 'home',
+        component: HomeComponent
     }, {
         path: 'user',
         component: UserComponent
@@ -16,7 +22,22 @@ const appRoutes: Routes = [
     {
         path: 'product',
         component: ProductComponent
+    },
+    {
+        path: '**',
+        component: Error404Component
     }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+@NgModule({
+    imports: [
+        RouterModule.forRoot(routes)
+    ],
+    exports: [
+        RouterModule
+    ]
+})
+
+export class AppRoutingModule {
+}
+export const routingComponents = [UserComponent, ProductComponent, ContentComponent, Error404Component];

@@ -10,22 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var common_1 = require('@angular/common');
 var app_component_1 = require('./app.component');
-var menu_components_1 = require('./components/menu.components');
+var menu_component_1 = require('./components/menu.component');
 var main_component_1 = require('./components/main.component');
-var user_components_1 = require('./components/user.components');
-var product_component_1 = require('./components/product.component');
-var content_component_1 = require("./components/content.component");
+var footer_component_1 = require("./components/footer.component");
+var home_component_1 = require("./components/home.component");
 var app_routing_1 = require('./app.routing');
+var forms_1 = require('@angular/forms');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent, menu_components_1.MenuComponent, main_component_1.MainComponent,
-                user_components_1.UserComponent, product_component_1.ProductComponent, content_component_1.ContentComponent],
-            bootstrap: [app_component_1.AppComponent,]
+            imports: [platform_browser_1.BrowserModule, app_routing_1.AppRoutingModule, forms_1.ReactiveFormsModule],
+            declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, main_component_1.MainComponent,
+                app_routing_1.routingComponents, footer_component_1.FooterComponent, home_component_1.HomeComponent],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

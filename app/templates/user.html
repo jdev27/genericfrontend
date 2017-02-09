@@ -1,12 +1,117 @@
 <div class="ui fluid container">
-    <h2>User</h2>
-    <p>
-        name = {{user.name}}<br/>
-        email = {{user.email}}<br/>
-        address = {{ '{' }} <br/>
-        street: {{user.address.street}},<br/>
-        city: {{user.address.city}},<br/>
-        country: {{user.address.country}},<br/>
-        {{ '}' }}
-    </p>
+    <h2 class="ui dividing header">Users</h2>
+
+    <form [formGroup]="userForm" class="ui form segment error" (ngSubmit)="addUser(userForm.value)">
+
+        <div class="field">
+            <label>Name</label>
+            <input type="text" placeholder="Name" formControlName="name">
+            <div *ngIf="userForm.get('name').hasError('required') && userForm.get('name').touched"
+                 class="ui pointing label">
+                Please enter a value
+            </div>
+            <div *ngIf="userForm.get('name').hasError('minlength')" class="ui error message">
+                Please enter at least 5 characters
+            </div>
+            <div *ngIf="userForm.get('name').hasError('maxlength')" class="ui error message">
+                name cannot exceed 10 characters
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Email</label>
+            <input type="text" placeholder="Email" formControlName="email">
+            <div *ngIf="userForm.get('email').hasError('required') && userForm.get('email').touched"
+                 class="ui pointing label">
+                Please enter a value
+            </div>
+            <div *ngIf="userForm.get('email').hasError('maxlength')" class="ui error message">
+                name cannot exceed 30 characters
+            </div>
+        </div>
+
+
+        <!--<div class="field">-->
+        <!--<label>Gender</label>-->
+        <!--<select class="ui selection dropdown" formControlName="gender">-->
+        <!--<option value="" class="item"></option>-->
+        <!--<option value="m" class="item">Male</option>-->
+        <!--<option value="f" class="item">Female</option>-->
+        <!--</select>-->
+        <!--&lt;!&ndash;<div class="ui selection dropdown">&ndash;&gt;-->
+        <!--&lt;!&ndash;<input type="hidden" name="gender">&ndash;&gt;-->
+        <!--&lt;!&ndash;<i class="dropdown icon"></i>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="default text">Gender</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="menu">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="item" data-value="1">Male</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="item" data-value="0">Female</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+        <!--<div class="field"> -->
+        <!--<input type="text" placeholder="Gender" formControlName="gender">-->
+        <!--&lt;!&ndash;<div [hidden]="true" class="ui pointing label">&ndash;&gt;-->
+        <!--&lt;!&ndash;Please enter a value&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+        <div class="field">
+            <label>Birthday</label>
+            <input type="text" placeholder="Birthday" formControlName="dob">
+            <!--<div [hidden]="true" class="ui pointing label">-->
+            <!--Please enter a value-->
+            <!--</div>-->
+        </div>
+        <div class="field"><label>Address</label></div>
+        <div formGroupName="address" class="ui segment">
+            <div class="field">
+                <label>Street</label>
+                <input type="text" placeholder="Street" formControlName="street">
+            </div>
+            <div class="field">
+                <label>City</label>
+                <input type="text" placeholder="City" formControlName="city">
+            </div>
+            <div class="field">
+                <label>Postal Code</label>
+                <input type="text" placeholder="Postal Code" formControlName="postalCode">
+            </div>
+            <div class="field">
+                <label>Country</label>
+                <input type="text" placeholder="Country" formControlName="country">
+            </div>
+        </div>
+        <button type="submit" class="ui primary button" [disabled]="!userForm.valid">Add user</button>
+        <!--</div>-->
+    </form>
+
+    <h4 class="ui header">Users</h4>
+    <table class="ui inverted table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Birthday</th>
+            <th>Address</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr *ngFor="let user of users" (click)="onSelect(user)">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.dob | date:'dd/MM/yyyy'}}</td>
+            <td>{{user.address.street}} {{user.address.city}}, {{user.address.country}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>3 People</th>
+            <th>2 Approved</th>
+            <th></th>
+        </tr>
+        </tfoot>
+    </table>
+
 </div>

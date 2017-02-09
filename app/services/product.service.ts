@@ -1,3 +1,5 @@
+import  '../models/product.model';
+
 export class ProductService {
 
     getProduct(): Product {

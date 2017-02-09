@@ -1,4 +1,5 @@
 "use strict";
+require('../models/product.model');
 var ProductService = (function () {
     function ProductService() {
     }
